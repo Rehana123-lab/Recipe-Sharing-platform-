@@ -9,7 +9,9 @@ import Recipe from "./Components/Recipe";
 import Navbar from "./Components/Navbar";
 import CreateRecipe from "./Components/Createrecipe";
 import AdminDashboard from "./Components/AdminDashboard";
+
 import ManageRecipes from "./Components/ManageRecipes";
+import ManageUsers from "./Components/ManageUsers";
 
 
 function App() {
@@ -32,7 +34,10 @@ function App() {
         {/* Login Page */}
         <Route path="/login" element={<Authorization setToken={setToken} />} />
         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
+        <Route path="/admin/users" element={<ManageUsers/>}/>
         {/* Manage Recipes (Admin Only) */}
+
   <Route path="/admin/recipes" element={<ManageRecipes
    />} />
 

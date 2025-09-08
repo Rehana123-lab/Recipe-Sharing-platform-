@@ -17,6 +17,9 @@ app.use('/router',loginrouter)
 const recipeRoutes = require("./router/Reciperouter");
 app.use("/recipes", recipeRoutes);
 
+const userRoutes = require("./router/Userrouter");
+app.use("/users", userRoutes);
+
 
 
 
@@ -34,7 +37,7 @@ const port=env.PORT ||3001
 
 
 
-const protectedRoutes = require('./router/protected');
+const protectedRoutes = require('./router/Protected');
 app.use('/protected',protectedRoutes)
 
 

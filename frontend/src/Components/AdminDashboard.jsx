@@ -24,27 +24,43 @@ const AdminDashboard = () => {
         </div>
       </header>
 
-      {/* Dashboard Content */}
-      <main className="w-full px-16 py-16 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-16 ml-120">
+      {/* Dashboard Links */}
+      <main className="w-full px-16 py-16 grid grid-cols-1 md:grid-cols-2 gap-16">
         
-  {/* Card 1 */}
-  <div className="bg-white shadow-2xl rounded-3xl p-12 hover:scale-110 hover:shadow-3xl transition transform">
-    <h2 className="text-3xl font-bold text-emerald-700 mb-6">Manage all Recipes</h2>
-    <p className="text-gray-700 text-lg mb-8">
-      edit, or delete user-submitted recipes.
-    </p>
-    <button
-      onClick={() => navigate("/admin/recipes")}
-      className="bg-emerald-700 text-white text-lg px-8 py-4 rounded-xl hover:bg-emerald-800 transition"
-    >
-      Go to Recipes
-    </button>
-  </div>
+        {/* Go to Manage Users */}
+        <div className="bg-white shadow-2xl rounded-3xl p-12 hover:scale-105 transition">
+          <h2 className="text-3xl font-bold text-blue-800 mb-6">Manage Users</h2>
+          <p className="text-gray-700 text-lg mb-8">
+            View or delete registered users.
+          </p>
+          <button
+            onClick={() => navigate("/admin/users")}
+            className="bg-blue-800 text-white text-lg px-8 py-4 rounded-xl hover:bg-blue-900 transition"
+          >
+            Go to Users
+          </button>
+        </div>
 
-</main>
-
+        {/* Go to Manage Recipes */}
+        <div className="bg-white shadow-2xl rounded-3xl p-12 hover:scale-105 transition">
+          <h2 className="text-3xl font-bold text-emerald-700 mb-6">Manage Recipes</h2>
+          <p className="text-gray-700 text-lg mb-8">
+            Edit or delete user-submitted recipes.
+          </p>
+          <button
+            onClick={() => navigate("/admin/recipes")}
+            className="bg-emerald-700 text-white text-lg px-8 py-4 rounded-xl hover:bg-emerald-800 transition"
+          >
+            Go to Recipes
+          </button>
+        </div>
+      </main>
     </div>
   );
 };
 
 export default AdminDashboard;
+
+
+
+

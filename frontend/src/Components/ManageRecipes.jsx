@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"; // ✅ Import navigate
 
 const ManageRecipes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -12,6 +13,8 @@ const ManageRecipes = () => {
   });
 
   const token = localStorage.getItem("token");
+  const navigate = useNavigate(); // ✅ Initialize navigate
+
   const api = axios.create({
     baseURL: "http://localhost:3001",
     headers: { Authorization: `Bearer ${token}` },
@@ -98,6 +101,14 @@ const ManageRecipes = () => {
 
   return (
     <div className="p-10 bg-gradient-to-br from-green-100 via-white to-green-200 min-h-screen">
+      {/* 🔙 Back Button */}
+      <button
+        onClick={() => navigate("/admin-dashboard")}
+        className="mb-6 bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-700"
+      >
+        ← Back to Dashboard
+      </button>
+
       <h1 className="text-4xl font-extrabold text-center text-emerald-700 mb-8">
         Manage Recipes
       </h1>
@@ -211,7 +222,5 @@ const ManageRecipes = () => {
 };
 
 export default ManageRecipes;
-
-
 
 
